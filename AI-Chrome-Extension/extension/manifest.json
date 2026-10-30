@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "AI Prompt Assistant",
+  "version": "1.0.0",
+  "description": "Generate helpful responses with Groq AI.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "AI Prompt Assistant",
+    "default_popup": "popup.html"
+  },
+  "host_permissions": ["http://localhost:3000/*"]
+}

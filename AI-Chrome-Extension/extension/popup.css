@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  color: #202334;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --muted: #72778b;
+  --purple: #6948e8;
+  --line: #e5e7ef;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 360px; width: 400px; max-height: 600px; overflow-y: auto; background: #f7f8fc; }
+
+.app-shell { padding: 23px 23px 16px; }
+.topbar { display: flex; align-items: center; gap: 12px; }
+.brand-mark { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 14px; background: linear-gradient(145deg, #7559ef, #4d35cb); color: white; font-size: 23px; box-shadow: 0 5px 12px #6948e833; }
+.eyebrow { margin: 0 0 2px; color: var(--purple); font-size: 9px; font-weight: 700; letter-spacing: .13em; }
+h1 { margin: 0; font: 800 18px/1.25 'Manrope', 'Segoe UI', sans-serif; letter-spacing: -.04em; }
+.intro { margin: 16px 0 19px; color: var(--muted); font-size: 12px; }
+label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; }
+textarea { display: block; width: 100%; min-height: 119px; resize: vertical; padding: 12px 13px; border: 1px solid var(--line); border-radius: 12px; outline: none; background: #fff; color: #202334; font: 12px/1.55 'DM Sans', 'Segoe UI', sans-serif; transition: border-color .18s, box-shadow .18s; }
+textarea::placeholder { color: #a1a5b4; }
+textarea:focus { border-color: #9d8bf3; box-shadow: 0 0 0 3px #6948e81c; }
+.field-meta { display: flex; justify-content: space-between; margin: 7px 1px 14px; color: #8a8fa1; font-size: 10px; }
+button { display: flex; width: 100%; height: 43px; align-items: center; justify-content: center; position: relative; gap: 7px; border: 0; border-radius: 11px; background: linear-gradient(105deg, #7154ec, #583bd3); color: #fff; font: 700 12px 'DM Sans', 'Segoe UI', sans-serif; cursor: pointer; box-shadow: 0 5px 13px #6948e82e; transition: transform .15s, opacity .15s; }
+button:hover:not(:disabled) { transform: translateY(-1px); }
+button:disabled { cursor: wait; opacity: .65; }
+.quiz-button { margin-top: 9px; border: 1px solid #ded8fb; background: #fff; color: var(--purple); box-shadow: none; }
+.quiz-button:disabled { background: #f4f2fc; }
+.button-arrow { position: absolute; right: 15px; font-size: 16px; }
+.loading { display: flex; align-items: center; gap: 9px; margin-top: 18px; color: #696e81; font-size: 11px; }
+.spinner { width: 15px; height: 15px; border: 2px solid #d9d3fa; border-top-color: var(--purple); border-radius: 50%; animation: spin .75s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.error { margin-top: 15px; padding: 10px 12px; border: 1px solid #f5cbca; border-radius: 9px; background: #fff2f1; color: #a83c39; font-size: 11px; line-height: 1.5; }
+.output-section { margin-top: 19px; padding-top: 15px; border-top: 1px solid var(--line); }
+.output-heading { display: flex; align-items: center; justify-content: space-between; }
+h2 { margin: 0; font: 700 12px 'Manrope', 'Segoe UI', sans-serif; }
+.sparkle { color: var(--purple); }
+.output { max-height: 240px; overflow-y: auto; margin-top: 9px; padding: 12px; border: 1px solid #eceaf7; border-radius: 10px; background: #fff; color: #44495c; font-size: 11px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.quiz-progress { position: sticky; top: -12px; z-index: 1; margin: -12px -12px 10px; padding: 9px 12px; border-bottom: 1px solid #eceaf7; background: #fff; color: var(--purple); font-size: 10px; font-weight: 700; }
+.quiz-question { margin-top: 10px; padding: 11px; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+.quiz-question h3 { margin: 0; color: var(--purple); font: 700 10px 'DM Sans', 'Segoe UI', sans-serif; }
+.quiz-question-text { margin: 6px 0 9px; color: #34384b; font-size: 11px; font-weight: 600; line-height: 1.5; }
+.quiz-options { display: grid; gap: 6px; }
+.quiz-option { display: flex; align-items: flex-start; gap: 7px; margin: 0; padding: 7px; border: 1px solid #eceef4; border-radius: 7px; color: #52576a; cursor: pointer; font-size: 10px; font-weight: 400; line-height: 1.45; }
+.quiz-option:hover { border-color: #c9bffa; background: #faf9ff; }
+.quiz-option input { flex: 0 0 auto; margin: 1px 0 0; accent-color: var(--purple); }
+.quiz-option.is-correct { border-color: #8bc9a3; background: #f0faf3; color: #22633a; }
+.quiz-option.is-incorrect { border-color: #e4a09e; background: #fff3f2; color: #963b38; }
+.check-answer { width: auto; height: 30px; margin-top: 8px; padding: 0 12px; border-radius: 8px; font-size: 10px; box-shadow: none; }
+.quiz-feedback { margin: 8px 0 0; font-size: 10px; line-height: 1.5; }
+.feedback-correct { color: #22633a; }
+.feedback-incorrect { color: #963b38; }
+.quiz-complete { margin: 10px 0 0; padding: 10px; border-radius: 8px; background: #f0faf3; color: #22633a; font-size: 11px; font-weight: 700; text-align: center; }
+.history-section { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.history-heading { display: flex; align-items: center; justify-content: space-between; }
+.clear-history { width: auto; height: auto; padding: 4px 8px; border: 0; background: transparent; color: var(--muted); font-size: 10px; box-shadow: none; }
+.clear-history:hover:not(:disabled) { color: #a83c39; transform: none; }
+.history-list { display: grid; max-height: 170px; gap: 7px; overflow-y: auto; margin-top: 9px; }
+.history-item { display: block; height: auto; min-height: 48px; padding: 9px 10px; border: 1px solid var(--line); background: #fff; color: #45495c; text-align: left; box-shadow: none; }
+.history-item:hover:not(:disabled) { border-color: #c9bffa; transform: none; }
+.history-metadata { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 9px; }
+.history-metadata strong { color: var(--purple); font-size: 9px; }
+.history-prompt { display: block; overflow: hidden; margin-top: 5px; color: #404457; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.history-empty { margin: 0; padding: 9px 2px; color: #8a8fa1; font-size: 10px; }
+footer { margin-top: 17px; color: #999dad; text-align: center; font-size: 9px; }
+[hidden] { display: none !important; }
