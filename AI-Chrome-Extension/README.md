@@ -1,4 +1,4 @@
-# AI Prompt Assistant Chrome Extension
+# AI Prompt Assistant Extension
 
 A Manifest V3 Chrome popup that sends prompts to a local Express backend and generates plain-text responses with GroqCloud. The Groq API key stays in the backend and is never included in extension files.
 
